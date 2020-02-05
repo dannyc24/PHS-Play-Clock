@@ -3,8 +3,8 @@
  * 
  */
 
-int BRAKEMODEPIN = 9;
-int DIRCONTROLPIN = 12;
+int BRAKEMODEPIN = 9; // Pin for Brake/Coast mode -- (Defined by the Arduino Motor Shield Spec).
+int DIRCONTROLPIN = 12; //Pin for Forward/Reverse Control -- (Defined by the Arduino Motor Shield Spec).
 const int CONTROLPIN = 3; // Control PWM output (Defined by the Arduino Motor Shield Spec).
 
 const int ANALOGTHRESHOLD = 700; //Analog Value to determine on state on Analog Input Pin
@@ -60,7 +60,7 @@ void loop() {
         //Do Nothing
       }
       prevState = curState;
-      digitalWrite(12,mFORWARD);
+      digitalWrite(DIRCONTROLPIN,mFORWARD); //Change Direction
       rampUp();
     }
   }
@@ -77,7 +77,7 @@ void loop() {
       else {
         //Do nothing for delay 
       }
-      digitalWrite(12,mREVERSE);
+      digitalWrite(DIRCONTROLPIN,mREVERSE); //Change Direction 
       rampUp(); //Ramp speed controller up
       prevState = curState;
       
