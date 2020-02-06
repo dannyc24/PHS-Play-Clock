@@ -37,6 +37,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   int a2 = analogRead(2);
   int a3 = analogRead(3);
+
+  
   
   Serial.print("A2 ");
   Serial.print(a2);
